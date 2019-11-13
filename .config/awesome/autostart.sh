@@ -17,3 +17,6 @@ function run {
 # Enable numlock on login
 # Required numlockx to be installed
 run numlockx
+
+# Desktop effects
+run compton --config ~/.config/compton/compton.conf
