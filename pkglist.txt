@@ -65,7 +65,6 @@ sed
 sudo
 systemd
 telegram-desktop
-termite
 texinfo
 ttf-anonymous-pro
 ttf-bitstream-vera
