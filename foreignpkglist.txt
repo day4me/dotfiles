@@ -1,0 +1,4 @@
+cava
+megasync
+spotify
+yay
