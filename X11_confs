@@ -1,0 +1,27 @@
+## 20-intel.conf
+Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option      "TearFree"    "true"
+EndSection
+
+## 70-synaptics.conf
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "3"
+        Option "TapButton3" "2"
+	Option "CoastingSpeed" "0"
+EndSection
+
+
+
+## timedatectl
+## acpid service enable
+## networkmanager service enable
+## qtct(theme) change, filepicker
+## delete pavucontrol sound
+#https://askubuntu.com/questions/61878/how-can-i-disable-the-popping-sound-when-adjusting-the-volume
+## disable tearing in firefox
