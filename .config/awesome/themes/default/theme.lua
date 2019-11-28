@@ -59,7 +59,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[border_color|border_width|shape|opacity]
 
 -- Max icon_size for notification icons!!!
-theme.notification_icon_size = dpi(200)
+theme.notification_icon_size = dpi(150)
 
 
 -- Variables set for theming the menu:
