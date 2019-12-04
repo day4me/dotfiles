@@ -14,6 +14,10 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+-- Per-window keyboard layout switcher
+awpwkb = require("awpwkb")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -53,6 +57,12 @@ beautiful.init( theme_dir .. theme_name .. "/theme.lua" )
 terminal = "kitty -1"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+
+-- init keyboard layout switcher
+kb = awpwkb.init({
+	default_layout = "us"
+})
+kb = awpwkb.get()
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -330,7 +340,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey 		  }, "d", function() menubar.show() end,
+    awful.key({ modkey 		  }, "d", function() kb:set_layout("us") menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
     -- Spawn ranger in a terminal
