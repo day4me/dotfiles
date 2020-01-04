@@ -358,9 +358,9 @@ globalkeys = gears.table.join(
               {description = "browse screenshots", group = "screenshots"}),
 
     -- Volume Control
-    awful.key({},"XF86AudioRaiseVolume", function() awful.spawn.with_shell("pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +5%") end,
+    awful.key({},"XF86AudioRaiseVolume", function() awful.spawn.with_shell("pactl set-sink-mute 0 0 && pactl set-sink-volume 0 +2%") end,
     	      {description = "volume up", group = "volume control"}),
-    awful.key({},"XF86AudioLowerVolume", function() awful.spawn.with_shell("pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -5%") end,
+    awful.key({},"XF86AudioLowerVolume", function() awful.spawn.with_shell("pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -2%") end,
     	      {description = "volume down", group = "volume control"}),
     awful.key({},"XF86AudioMute", function() awful.spawn.with_shell("pactl set-sink-mute 0 toggle") end,
     	      {description = "volume toggle", group = "volume control"})
