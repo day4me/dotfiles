@@ -52,6 +52,7 @@ end
 local theme_name = "default"
 local theme_dir = os.getenv("HOME") .. "/.config/awesome/themes/"
 beautiful.init( theme_dir .. theme_name .. "/theme.lua" )
+beautiful.font = "SF Pro Display Regular 10"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty -1"
@@ -348,13 +349,13 @@ globalkeys = gears.table.join(
               {description = "ranger", group = "launcher"}),
 
     -- Screenshots
-    awful.key({ 		  }, "Print", function() awful.spawn.with_shell(os.getenv("HOME") .. "/.bin/screenshot") end,
+    awful.key({ 		  }, "Print", function() awful.spawn.with_shell("screenshot") end,
               {description = "take full screenshot", group = "screenshots"}),
-    awful.key({ modkey, "Shift"   }, "Print", function() awful.spawn.with_shell(os.getenv("HOME") .. "/.bin/screenshot -s") end,
+    awful.key({ modkey, "Shift"   }, "Print", function() awful.spawn.with_shell("screenshot -s") end,
               {description = "select area to capture", group = "screenshots"}),
-    awful.key({ modkey, "Control" }, "Print", function() awful.spawn.with_shell(os.getenv("HOME") .. "/.bin/screenshot -c") end,
+    awful.key({ modkey, "Control" }, "Print", function() awful.spawn.with_shell("screenshot -c") end,
               {description = "select area to copy to clipboard", group = "screenshots"}),
-    awful.key({ modkey 	  	  }, "Print", function() awful.spawn.with_shell(os.getenv("HOME") .. "/.bin/screenshot -b") end,
+    awful.key({ modkey 	  	  }, "Print", function() awful.spawn.with_shell("screenshot -b") end,
               {description = "browse screenshots", group = "screenshots"}),
 
     -- Volume Control
