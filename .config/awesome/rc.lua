@@ -19,7 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 awpwkb = require("awpwkb")
 
 --test
-local td = require("widgets.todo")
+--require("widgets.todo")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -232,7 +232,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
-            wibox.widget.systray(),
+            wibox.layout.margin(wibox.widget.systray(), 1, 1, 1, 1),				--wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
         },
@@ -367,11 +367,11 @@ globalkeys = gears.table.join(
     awful.key({},"XF86AudioLowerVolume", function() awful.spawn.with_shell("pactl set-sink-mute 0 0 && pactl set-sink-volume 0 -2%") end,
     	      {description = "volume down", group = "volume control"}),
     awful.key({},"XF86AudioMute", function() awful.spawn.with_shell("pactl set-sink-mute 0 toggle") end,
-    	      {description = "volume toggle", group = "volume control"}),
+    	      {description = "volume toggle", group = "volume control"})
 
 --test
-awful.key({modkey},"z", function() todo_show() end, {description = "todo", group = "test"}),
-awful.key({modkey, "Shift"},"z", function() todo_hide() end, {description = "todo", group = "test"})
+--awful.key({modkey},"z", function() todo_show() end, {description = "todo", group = "test"}),
+--awful.key({modkey, "Shift"},"z", function() todo_hide() end, {description = "todo", group = "test"})
 
 )
 
