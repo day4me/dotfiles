@@ -19,4 +19,4 @@ function run {
 run numlockx
 
 # Desktop effects
-run compton --config ~/.config/compton/compton.conf
+#run compton --config ~/.config/compton/compton.conf
